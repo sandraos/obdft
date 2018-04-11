@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">OBD-FT</string>
+    <string name="action_settings">Connect To FT</string>
+    <string name="ft_settings">FT Settings</string>
+    <string name="no_bt_avail">No bluetooth adapter available</string>
+    <string name="bt_found">Bluetooth Device Found</string>
+    <string name="bt_not_found">Bluetooth Device Not Found</string>
+    <string name="bt_opened">Bluetooth Opened</string>
+
+    <string name="lbl_status">Status:</string>
+    <string name="lbl_time">Time:</string>
+    <string name="lbl_rpm">RPM:</string>
+    <string name="lbl_speed">Speed:</string>
+    <string name="lbl_odometer">Odometer:</string>
+    <string name="lbl_vin">VIN:</string>
+    <string name="lbl_lat">Latitude:</string>
+    <string name="lbl_long">Longitude:</string>
+    <string name="lbl_heading">Heading:</string>
+    <string name="lbl_egine_hours">Eng Hrs:</string>
+</resources>
