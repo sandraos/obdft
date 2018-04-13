@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity
 
     void findBT()
     {
-        String esnBluetoothId = "LMU_" + esnNumber;
+        String esnBluetoothId = "LMU_4863067679";// "LMU_" + esnNumber;
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        Boolean btFound = false;
+//        Boolean btFound = false;
 
         if (mBluetoothAdapter == null)
         {
@@ -80,14 +80,14 @@ public class MainActivity extends AppCompatActivity
             startActivityForResult(enableBluetooth, 0);
         }
 
-        try
+        /*try
         {
             Thread.sleep(3000);
         }
         catch (InterruptedException e)
         {
             e.printStackTrace();
-        }
+        }*/
 
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
         if (pairedDevices.size() > 0)
@@ -97,13 +97,13 @@ public class MainActivity extends AppCompatActivity
                 if (device.getName().equals(esnBluetoothId))
                 {
                     mmDevice = device;
-                    btFound = true;
+                    //btFound = true;
                     break;
                 }
             }
         }
 
-        labelView.setText(btFound ? R.string.bt_found : R.string.bt_not_found);
+        labelView.setText(R.string.bt_found);//btFound ? R.string.bt_found : R.string.bt_not_found);
     }
 
     void openBT() throws IOException
@@ -289,7 +289,7 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings)
         {
-            if (esnNumber.isEmpty())
+            /*if (esnNumber.isEmpty())
             {
                 Toast toast = Toast.makeText(this, "Please enter an FT number before attempting to connect.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
@@ -297,7 +297,7 @@ public class MainActivity extends AppCompatActivity
                 return false;
             }
             else
-            {
+            {*/
                 try
                 {
                     findBT();
@@ -309,8 +309,8 @@ public class MainActivity extends AppCompatActivity
                 }
             }
 
-            return true;
-        }
+            //return true;
+        /*}
         else if (id == R.id.ft_settings)
         {
             AlertDialog.Builder dialog = new AlertDialog.Builder(this, R.style.Theme_AppCompat_Dialog_Alert);
@@ -341,7 +341,7 @@ public class MainActivity extends AppCompatActivity
 
             dialog.show();
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
