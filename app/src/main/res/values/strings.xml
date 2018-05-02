@@ -17,4 +17,5 @@
     <string name="lbl_long">Longitude:</string>
     <string name="lbl_heading">Heading:</string>
     <string name="lbl_egine_hours">Eng Hrs:</string>
+    <string name="lbl_odometer_raw">Odometer Raw:</string>
 </resources>

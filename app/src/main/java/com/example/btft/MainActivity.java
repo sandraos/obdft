@@ -30,7 +30,7 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity
 {
-    TextView labelView, timeView, vinView, rpmView, speedView, odometerView, latView, longView, headingView, engineHoursView;
+    TextView labelView, timeView, vinView, rpmView, speedView, odometerView, latView, longView, headingView, engineHoursView, odometerRawView;
     BluetoothAdapter mBluetoothAdapter;
     BluetoothSocket mmSocket;
     BluetoothDevice mmDevice;
@@ -61,11 +61,12 @@ public class MainActivity extends AppCompatActivity
         longView = findViewById(R.id.longView);
         headingView = findViewById(R.id.headingView);
         engineHoursView = findViewById(R.id.engineHoursView);
+        odometerRawView = findViewById(R.id.odometerRawView);
     }
 
     void findBT()
     {
-        String esnBluetoothId = "LMU_4863067679";// "LMU_" + esnNumber;
+        String esnBluetoothId = "LMU_4863067693";// "LMU_" + esnNumber;
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 //        Boolean btFound = false;
 
@@ -253,6 +254,9 @@ public class MainActivity extends AppCompatActivity
 
                 String[] odometerTokens = tokens[4].split(":");
                 double odometer = Double.parseDouble(odometerTokens[1]);
+                // raw odometer value
+                odometerRawView.setText(odometerTokens[1]);
+
                 odometer *= 0.000621371; // meters to miles
                 tokens[4] = String.format(Locale.US, "%.1f", odometer);
                 break;
